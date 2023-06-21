@@ -131,7 +131,7 @@ namespace Steam_Desktop_Authenticator
 
             if (currentAccount == null) return;
 
-            List<Confirmation> confs = new List<Confirmation>();
+            
             Dictionary<SteamGuardAccount, List<Confirmation>> autoAcceptConfirmations = new Dictionary<SteamGuardAccount, List<Confirmation>>();
 
             try
@@ -139,8 +139,11 @@ namespace Steam_Desktop_Authenticator
                 Confirmation[] tmp = await currentAccount.FetchConfirmationsAsync();
                 foreach (var conf in tmp)
                 {
+
+
+                    if (!autoAcceptConfirmations.ContainsKey(currentAccount))
                         autoAcceptConfirmations[currentAccount] = new List<Confirmation>();
-                        autoAcceptConfirmations[currentAccount].Add(conf);
+                    autoAcceptConfirmations[currentAccount].Add(conf);
 
                 }
             }
