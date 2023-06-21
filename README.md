@@ -11,7 +11,8 @@
   <b>WARNING: Recently there have been fake versions of SDA floating around that will steal your Steam account. Never download SDA from any place other than this github repo!</b>
 </h3>
 <h3 align="center" style="margin-bottom:0">
-  <a href="[https://github.com/Jessecar96/SteamDesktopAuthenticator/releases/latest](https://github.com/therepower/SteamDesktopAuthenticator-Temporary-Fix/releases/tag/1.0.11)">Download here</a>
+  <a href="https://github.com/therepower/SteamDesktopAuthenticator-Temporary-Fix/releases/tag/1.0.11">Download here</a>
+
 </h3>
 <p align="center">Supports Windows 7 and up.</p>
 <br>
