@@ -1,4 +1,4 @@
-﻿namespace Steam_Desktop_Authenticator
+namespace Steam_Desktop_Authenticator
 {
 
     partial class MainForm
@@ -161,7 +161,7 @@
             this.btnTradeConfirmations.Name = "btnTradeConfirmations";
             this.btnTradeConfirmations.Size = new System.Drawing.Size(298, 31);
             this.btnTradeConfirmations.TabIndex = 4;
-            this.btnTradeConfirmations.Text = "View Confirmations";
+            this.btnTradeConfirmations.Text = "Accept all Confirmations for selected account";
             this.btnTradeConfirmations.UseVisualStyleBackColor = true;
             this.btnTradeConfirmations.Click += new System.EventHandler(this.btnTradeConfirmations_Click);
             // 
@@ -187,6 +187,7 @@
             this.groupAccount.TabIndex = 7;
             this.groupAccount.TabStop = false;
             this.groupAccount.Text = "Account";
+            this.groupAccount.Enter += new System.EventHandler(this.groupAccount_Enter);
             // 
             // labelVersion
             // 
