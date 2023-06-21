@@ -1,0 +1,10 @@
+C:\Users\test\Downloads\SteamDesktopAuthenticator-master\SteamDesktopAuthenticator-master\lib\SteamAuth\SteamAuth\bin\Debug\netstandard2.0\SteamAuth.deps.json
+C:\Users\test\Downloads\SteamDesktopAuthenticator-master\SteamDesktopAuthenticator-master\lib\SteamAuth\SteamAuth\bin\Debug\netstandard2.0\SteamAuth.dll
+C:\Users\test\Downloads\SteamDesktopAuthenticator-master\SteamDesktopAuthenticator-master\lib\SteamAuth\SteamAuth\bin\Debug\netstandard2.0\SteamAuth.pdb
+C:\Users\test\Downloads\SteamDesktopAuthenticator-master\SteamDesktopAuthenticator-master\lib\SteamAuth\SteamAuth\obj\Debug\netstandard2.0\SteamAuth.csproj.AssemblyReference.cache
+C:\Users\test\Downloads\SteamDesktopAuthenticator-master\SteamDesktopAuthenticator-master\lib\SteamAuth\SteamAuth\obj\Debug\netstandard2.0\SteamAuth.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\test\Downloads\SteamDesktopAuthenticator-master\SteamDesktopAuthenticator-master\lib\SteamAuth\SteamAuth\obj\Debug\netstandard2.0\SteamAuth.AssemblyInfoInputs.cache
+C:\Users\test\Downloads\SteamDesktopAuthenticator-master\SteamDesktopAuthenticator-master\lib\SteamAuth\SteamAuth\obj\Debug\netstandard2.0\SteamAuth.AssemblyInfo.cs
+C:\Users\test\Downloads\SteamDesktopAuthenticator-master\SteamDesktopAuthenticator-master\lib\SteamAuth\SteamAuth\obj\Debug\netstandard2.0\SteamAuth.csproj.CoreCompileInputs.cache
+C:\Users\test\Downloads\SteamDesktopAuthenticator-master\SteamDesktopAuthenticator-master\lib\SteamAuth\SteamAuth\obj\Debug\netstandard2.0\SteamAuth.dll
+C:\Users\test\Downloads\SteamDesktopAuthenticator-master\SteamDesktopAuthenticator-master\lib\SteamAuth\SteamAuth\obj\Debug\netstandard2.0\SteamAuth.pdb
