@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -125,27 +125,58 @@ namespace Steam_Desktop_Authenticator
             this.loadAccountsList();
         }
 
-        private void btnTradeConfirmations_Click(object sender, EventArgs e)
+        private async void btnTradeConfirmations_Click(object sender, EventArgs e)
         {
+           
+
             if (currentAccount == null) return;
 
-            string oText = btnTradeConfirmations.Text;
-            btnTradeConfirmations.Text = "Loading...";
-            btnTradeConfirmations.Text = oText;
+            List<Confirmation> confs = new List<Confirmation>();
+            Dictionary<SteamGuardAccount, List<Confirmation>> autoAcceptConfirmations = new Dictionary<SteamGuardAccount, List<Confirmation>>();
 
             try
             {
-                ConfirmationFormWeb confirms = new ConfirmationFormWeb(currentAccount);
-                confirms.Show();
-            }
-            catch (Exception)
-            {
-                DialogResult res = MessageBox.Show("You are missing a dependency required to view your trade confirmations.\nWould you like to install it now?", "Trade confirmations failed to open", MessageBoxButtons.YesNo);
-                if (res == DialogResult.Yes)
+                Confirmation[] tmp = await currentAccount.FetchConfirmationsAsync();
+                foreach (var conf in tmp)
                 {
-                    new InstallRedistribForm(true).ShowDialog();
+                        autoAcceptConfirmations[currentAccount] = new List<Confirmation>();
+                        autoAcceptConfirmations[currentAccount].Add(conf);
+
                 }
             }
+            catch (SteamGuardAccount.WGTokenInvalidException)
+            {
+                //Prompt to relogin
+                PromptRefreshLogin(currentAccount);
+                return;
+            }
+            catch (SteamGuardAccount.WGTokenExpiredException)
+            {
+                //Prompt to relogin
+                PromptRefreshLogin(currentAccount);
+                return; //Don't bombard a user with login refresh requests if they have multiple accounts. Give them a few seconds to disable the autocheck option if they want.
+            }
+            catch (WebException)
+            {
+
+            }
+
+            if (autoAcceptConfirmations.Count > 0)
+            {
+                foreach (var acc in autoAcceptConfirmations.Keys)
+                {
+                    var confirmations = autoAcceptConfirmations[acc].ToArray();
+                    acc.AcceptMultipleConfirmations(confirmations);
+            
+                }
+            }
+
+
+
+
+
+
+
         }
 
         private void btnManageEncryption_Click(object sender, EventArgs e)
@@ -703,6 +734,11 @@ namespace Steam_Desktop_Authenticator
                 but.Location = curPos;
                 curPos = new Point(curPos.X + but.Width, 0);
             }
+        }
+
+        private void groupAccount_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
